@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher Results</title>
+</head>
+<body>
+    <h1>Regex Matcher</h1>
+    <!-- Form for regex matching -->
+    <form action="/regex_matcher" method="post">
+        <label for="regex">Enter Regex Pattern:</label><br>
+        <input type="text" id="regex" name="regex" required><br><br>
+        <label for="test_string">Enter Input String:</label><br>
+        <input type="text" id="test_string" name="test_string" required><br><br>
+        <input type="submit" value="Match">
+    </form>
+
+    <!-- Display the regex matches -->
+    {% if matches %}
+        <h2>Matches Found:</h2>
+        <p>Regex matches the input string. Found {{ matches|length }} matches.</p>
+        <ul>
+            {% for match in matches %}
+                <li>{{ match }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Link to navigate back to the home page -->
+    <a href="/">Back to Home</a>
+</body>
+</html>
+
+

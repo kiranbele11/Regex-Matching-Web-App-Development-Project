@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validator Results</title>
+</head>
+<body>
+    <h1>Email Validator</h1>
+    <!-- Form for email validation -->
+    <form action="/email_validator" method="post">
+        <label for="email">Enter Email:</label><br>
+        <input type="text" id="email" name="email" required><br><br>
+        <input type="submit" value="Validate Email">
+    </form>
+
+    <!-- Display the validation result -->
+    {% if email_result %}
+        <h2>Validation Result:</h2>
+        <p>{{ email_result }}</p>
+    {% endif %}
+
+    <!-- Link to navigate back to the home page -->
+    <a href="/">Back to Home</a>
+</body>
+</html>
+
